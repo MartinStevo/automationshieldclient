@@ -37,6 +37,11 @@
   }
 }
 
+.graph {
+  width: 60%;
+  margin: auto;
+}
+
 .tabular {
   margin: auto;
 }
