@@ -3,26 +3,33 @@ import '../../App.css';
 import {Chart as ChartJS} from 'chart.js/auto'
 import {Line} from "react-chartjs-2";
 
-function Logs() {
+function MotoLogs() {
 
     const [dataList, setDataList] = useState([]);
     const [yList, setYList] = useState([]);
     const [uList, setUList] = useState([]);
+    const [aList, setAList] = useState([]);
+    const [vList, setVList] = useState([]);
     const [tsList, setTsList] = useState([]);
     const [tsMqttList, setTsMqttList] = useState([]);
     const [stateList, setStateList] = useState([]);
 
     const callApi = async () => {
-        fetch("http://localhost:9000/getlogs", {
+        fetch("http://localhost:9000/getmotologs", {
             method: "get",
             dataType: 'json',
         })
             .then((res) => res.json())
             .then((data) => {
 
+                console.log("here");
+                console.log(data);
+
                 var tempDataList = [];
                 var tempYList = [];
                 var tempUList = [];
+                var tempAList = [];
+                var tempVList = [];
                 var tempTsList = [];
                 var tempTsMqttList = [];
                 var tempStateList = [];
@@ -32,6 +39,8 @@ function Logs() {
                     tempDataList.push(item);
                     tempYList.push(item.y);
                     tempUList.push(item.u);
+                    tempAList.push(item.a);
+                    tempVList.push(item.v);
                     tempTsList.push(item.timestamp.value.toString());
                     tempTsMqttList.push(item.timestamp_mqtt.value.toString());
                     tempStateList.push(item.state);
@@ -40,6 +49,8 @@ function Logs() {
                 setDataList(tempDataList);
                 setYList(tempYList);
                 setUList(tempUList);
+                setAList(tempAList);
+                setVList(tempVList);
                 setTsList(tempTsList);
                 setTsMqttList(tempTsMqttList);
                 setStateList(tempStateList);
@@ -68,15 +79,27 @@ function Logs() {
                 )}
             </tr>
             <tr>
-                <th>Ball position</th>
+                <th>Voltage drop across a resistor</th>
                 {yList?.map(value =>
                     <td>{value.toString()}</td>
                 )}
             </tr>
             <tr>
-                <th>Fan operating speed</th>
+                <th>Motor load</th>
                 {uList?.map(value =>
                     <td>{value.toString()}</td>
+                )}
+            </tr>
+            <tr>
+                <th>Engine rpm </th>
+                {aList?.map(value =>
+                    <td>{value}</td>
+                )}
+            </tr>
+            <tr>
+                <th>Motor speed </th>
+                {vList?.map(value =>
+                    <td>{value}</td>
                 )}
             </tr>
             </tbody>
@@ -90,8 +113,8 @@ function Logs() {
                     labels: tsList,
                     datasets: [
                         {
-                            label: "ball position",
-                            data: yList,
+                            label: "motor speed",
+                            data: vList,
                             fill: true,
                             lineTension: 0.18,
                             backgroundColor: "rgba(75,192,192,0.2)",
@@ -106,8 +129,8 @@ function Logs() {
                     labels: tsList,
                     datasets: [
                         {
-                            label: "fan operating speed",
-                            data: uList,
+                            label: "engine rpm",
+                            data: aList,
                             fill: true,
                             lineTension: 0.18,
                             backgroundColor: "rgba(75,192,192,0.2)",
@@ -126,4 +149,4 @@ function Logs() {
     );
 }
 
-export default Logs;
+export default MotoLogs;

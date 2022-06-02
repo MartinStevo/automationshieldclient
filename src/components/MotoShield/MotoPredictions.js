@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import '../../App.css';
 
-function Predictions() {
+function MotoPredictions() {
 
     const [tsList, setTsList] = useState([]);
     const [valList, setValList] = useState([]);
 
     const callApiMS = async () => {
-        fetch("http://localhost:9000/getpredictions", {
+        fetch("http://localhost:9000/getmotopredictions", {
             method: "get",
             dataType: 'json',
         })
@@ -77,4 +77,4 @@ function Predictions() {
     );
 }
 
-export default Predictions;
+export default MotoPredictions;

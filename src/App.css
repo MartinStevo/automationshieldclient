@@ -1,46 +1,18 @@
 body {
-}
-
-.App {
-    /*position: relative;*/
-    height: 100vh;
-    text-align: center;
-    background-image: url("image/back.jpg");
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-bottom: 50px;
+    overflow: hidden;
 }
 
 .App-logo {
     height: 7vh;
     pointer-events: none;
+    padding-top: 25px;
+    margin-bottom: 15px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
     }
-}
-
-/*?*/
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-/*?*/
-.App-link {
-    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -52,111 +24,231 @@ body {
     }
 }
 
-.fancy {
-    font-family: "Brush Script MT", cursive;
-    font-size: xx-large;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    text-align: center;
-}
-
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 10vh;
-    background: rgb(0, 0, 0);
+    float: left;
+    /*display: inline-block;*/
+    background: black;
     color: #86c7e1;
     font-size: larger;
+    height: 100vh;
+    width: 22vw;
+    text-align: center;
+    /*min-width: 150px;*/
+    /*max-width: 300px;*/
 }
 
 .nav-Links {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     list-style: none;
     font-weight: bold;
 }
 
+section {
+    float: right;
+    /*display: inline-block;*/
+    height: 100vh;
+    width: 78vw;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.fancy {
+    font-family: "Brush Script MT", cursive;
+    font-size: xx-large;
+    text-align: center;
+    height: 6vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+article {
+    text-align: center;
+    height: 90vh;
+    display: flex; /* vertically centered */
+    justify-content: center; /* vertically centered */
+    align-items: center; /* vertically centered */
+}
+
 .users {
-    display: grid;
-    text-align: center;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    width: 70%;
-    margin: auto;
-}
-
-.section-left {
     display: inline-block;
-    /*flex: 1;*/
-    /*height: 60vh;*/
-    /*top: 50%;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
-    /*margin: auto;*/
-    /*width: 300px;*/
+    /*margin: 0 auto;*/
+    transform: translate(0%, -5%);
     background-color: #e7e7e7;
-    /*border: 2px solid black;*/
-    border: 2px solid white;
-    border-radius: 15px;
-    padding: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-}
-
-.section-right {
-    display: inline-block;
-    /*position: relative;*/
-    /*flex: 1;*/
-    /*height: 60vh;*/
-    /*top: 50%;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
-    /*margin: auto;*/
-    /*width: 300px;*/
-    background-color: #e7e7e7;
-    /*border: 2px solid black;*/
-    border: 1px solid white;
-    /*border-radius: 25px;*/
-    padding: 40px;
-    margin: 50px;
-}
-
-.wrapper {
-    text-align: center;
-}
-
-.labs {
-    width: 80%;
-    margin: 10px auto;
-    background-color: white;
     border: 1px solid black;
-    border-radius: 15px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 25vw;
+    max-width: 300px;
+    min-width: 250px;
 }
 
-.db-Links {
-    list-style: none;
+#admin-left {
+    transform: translate(0%, -50%);
 }
+
+.admin-right {
+    display: inline-block;
+    /*margin: 0 auto;*/
+    transform: translate(0%, -100%);
+    /*padding-top: 30px;*/
+    padding-bottom: 30px;
+    width: 35vw;
+    min-width: 250px;
+}
+
 
 label {
     color: #676767;
 }
 
-input {
+input, select {
     height: 22px;
     border-radius: 5px;
 }
 
+.wide {
+    width: 180px;
+}
+
+.qwide {
+    width: 160px;
+}
+
+select {
+    height: 30px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+.btn-hov {
+    cursor: pointer;
+    width: auto;
+    color: black;
+    display: inline-block;
+}
+
+.article-dashboard {
+    text-align: center;
+    height: 90vh;
+}
+
+.login-dashboard {
+    display: inline-block;
+    transform: translate(0%, 20%);
+    background-color: #e7e7e7;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 25vw;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+.edit-lab-dashboard {
+    display: inline-block;
+    transform: translate(0%, 20%);
+    background-color: #e7e7e7;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 60vw;
+    max-width: 600px;
+    min-width: 250px;
+}
+
+#logout-dashboard {
+    transform: translate(0%, 50%);
+}
+
+#edit-lab-dashboard-left {
+    float: left;
+    width: 50%;
+}
+
+#edit-lab-dashboard-right {
+    overflow: hidden;
+    width: 50%;
+    float: right;
+}
+
+.editInput {
+    width: 95px;
+}
+
+.wrapper {
+    width: 78vw;
+}
+
+.createLabWindows {
+    text-align: right;
+    transform: translate(-10%, 0%);
+}
+
+.dashboard-left {
+    float: left;
+    /*text-align: center;*/
+    /*display: inline-block;*/
+    width: 63vw;
+}
+
+.dashboard-right {
+    float: right;
+    text-align: left;
+    /*display: inline-block;*/
+    width: 15vw;
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .dashboard-right {
+        visibility: hidden;
+    }
+
+    .dashboard-left {
+        width: 78vw;
+    }
+}
+
+.table {
+    overflow-x: auto;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
 .graph {
-    width: 60%;
+    width: 40vw;
     margin: auto;
 }
 
 .tabular {
     margin: auto;
+    font-size: small;
+}
+
+.breakline {
+    clear: both;
+    background-color: #efefef;
+    height: 2vh;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.lab-user-panel {
+    background-color: #efefef;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: initial;
+    text-align: center;
+}
+
+p#lab-users {
+    text-align: left;
+    font-weight: initial;
 }

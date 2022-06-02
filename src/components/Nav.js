@@ -9,17 +9,25 @@ function Nav() {
         textDecoration: 'none'
     }
 
+    const ulStyle = {
+        textAlign: "left"
+    }
+
+
     return (
         <nav>
             <img src={logo} className="App-logo" alt="logo"/>
-            <ul className={"nav-Links"}>
-                <Link style={navStyle}  to='/dashboard'>
-                    <li>Dashboard</li>
-                </Link>
-                <Link style={navStyle}  to='/users'>
-                    <li>Profile</li>
-                </Link>
-            </ul>
+            <div style={ulStyle}>
+                <ul className={"nav-Links"}>
+                    <Link style={navStyle} to='/dashboard'>
+                        <li>Dashboard</li>
+                    </Link>
+                    <br/>
+                    <Link style={navStyle} to='/users'>
+                        <li>Profile</li>
+                    </Link>
+                </ul>
+            </div>
         </nav>
     );
 }
